@@ -1,0 +1,18 @@
+server:
+  context-path: /web
+  port: 8080
+
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      access-token-uri: http://127.0.0.1:8081/oauth/token
+      user-authorization-uri: http://127.0.0.1:8081/oauth/authorize
+      token-name: oauth_token
+      authentication-scheme: header
+zuul:
+  routes:
+    book:
+      path: /api/**
+      url: http://127.0.0.1:8082

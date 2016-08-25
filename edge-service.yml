@@ -1,0 +1,8 @@
+server:
+  port: 8082
+zuul:
+  routes:
+    resouces1:
+      path: /resources1/**
+      url: http://127.0.0.1:8083/rest
+      sensitiveHeaders: Cookie,Set-Cookie
