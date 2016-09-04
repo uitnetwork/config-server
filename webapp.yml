@@ -19,3 +19,18 @@ zuul:
       # serviceId: resource-service
   debug:
     request: true
+
+---
+
+spring:
+  profiles: docker
+
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      access-token-uri: http://oauth-service:8081/oauth/token
+      user-authorization-uri: http://oauth-service:8081/oauth/authorize
+      token-name: oauth_token
+      authentication-scheme: header
