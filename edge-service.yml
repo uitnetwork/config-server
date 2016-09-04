@@ -1,8 +1,11 @@
 server:
-  port: 8082
+  port: 8989
 zuul:
   routes:
     resouces1:
       path: /resources1/**
-      url: http://127.0.0.1:8083/rest
+      serviceId: resource-service
+      # serviceId: resource-service
       sensitiveHeaders: Cookie,Set-Cookie
+  debug:
+    request: true

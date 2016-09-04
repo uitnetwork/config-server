@@ -13,6 +13,9 @@ security:
       authentication-scheme: header
 zuul:
   routes:
-    book:
+    api:
       path: /api/**
-      url: http://127.0.0.1:8082
+      serviceId: edge-service
+      # serviceId: resource-service
+  debug:
+    request: true
